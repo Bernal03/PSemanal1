@@ -1,0 +1,40 @@
+﻿@model PracticaSemanal_EventosCiudades.Models.Ciudad
+
+@{
+    ViewBag.Title = "Ciudades";
+}
+
+<h2>Eliminación</h2>
+
+<h3>Una vez presionado "Eliminar" no hay vuelt atrás. Debe estar seguro antes de eliminar.</h3>
+<div>
+    <h4>Ciudad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCiudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreCiudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
